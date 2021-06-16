@@ -1,3 +1,4 @@
 server/public/*
 server/public/images/Chrome_test/Chrome_1900x700-a-3.png-fullpage.png
 server/nodes_modules/*
+webresult/node_modules

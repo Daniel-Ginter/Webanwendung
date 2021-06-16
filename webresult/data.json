@@ -1,0 +1,135 @@
+{
+  "list": [
+    {
+      "list": [
+        {
+          "id": 1,
+          "compareElement": "Chrome_test-a-0",
+          "elementStatus": "CHANGED",
+          "resultPicture": {
+            "Pixel": "Chrome_1900x700-a-0"
+          },
+          "score": {
+            "pixelScore": "95"
+          },
+          "mainElement": "Chrome_1900x700-a-0"
+        },
+        {
+          "id": 2,
+          "compareElement": "Chrome_test-a-1",
+          "elementStatus": "CHANGED",
+          "resultPicture": {
+            "Pixel": "Chrome_1900x700-a-1"
+          },
+          "score": {
+            "pixelScore": "98"
+          },
+          "mainElement": "Chrome_1900x700-a-1"
+        },
+        {
+          "id": 3,
+          "compareElement": "Chrome_test-a-10",
+          "elementStatus": "SAME",
+          "resultPicture": {},
+          "score": {},
+          "mainElement": "Chrome_1900x700-a-10"
+        },
+        {
+          "id": 4,
+          "compareElement": "Chrome_test-a-11",
+          "elementStatus": "SAME",
+          "resultPicture": {},
+          "score": {},
+          "mainElement": "Chrome_1900x700-a-11"
+        },
+        {
+          "id": 5,
+          "compareElement": "Chrome_test-a-2",
+          "elementStatus": "CHANGED",
+          "resultPicture": {
+            "Pixel": "Chrome_1900x700-a-2"
+          },
+          "score": {
+            "pixelScore": "99"
+          },
+          "mainElement": "Chrome_1900x700-a-2"
+        },
+        {
+          "id": 6,
+          "elementStatus": "NEW"
+        },
+        {
+          "id": 7,
+          "elementStatus": "NEW"
+        },
+        {
+          "id": 8,
+          "compareElement": "Chrome_test-a-4",
+          "elementStatus": "CHANGED",
+          "resultPicture": {
+            "Pixel": "Chrome_1900x700-a-4"
+          },
+          "score": {
+            "hashScore": "0.027777777777777776",
+            "pixelScore": "100"
+          },
+          "mainElement": "Chrome_1900x700-a-4"
+        },
+        {
+          "id": 9,
+          "compareElement": "Chrome_test-a-5",
+          "elementStatus": "CHANGED",
+          "resultPicture": {
+            "Pixel": "Chrome_1900x700-a-5"
+          },
+          "score": {
+            "hashScore": "0.1388888888888889",
+            "pixelScore": "100"
+          },
+          "mainElement": "Chrome_1900x700-a-5"
+        },
+        {
+          "id": 10,
+          "compareElement": "Chrome_test-a-6",
+          "elementStatus": "SAME",
+          "resultPicture": {},
+          "score": {},
+          "mainElement": "Chrome_1900x700-a-6"
+        },
+        {
+          "id": 11,
+          "compareElement": "Chrome_test-a-7",
+          "elementStatus": "SAME",
+          "resultPicture": {},
+          "score": {},
+          "mainElement": "Chrome_1900x700-a-7"
+        },
+        {
+          "id": 12,
+          "compareElement": "Chrome_test-a-8",
+          "elementStatus": "SAME",
+          "resultPicture": {},
+          "score": {},
+          "mainElement": "Chrome_1900x700-a-8"
+        },
+        {
+          "id": 13,
+          "compareElement": "Chrome_test-a-9",
+          "elementStatus": "SAME",
+          "resultPicture": {},
+          "score": {},
+          "mainElement": "Chrome_1900x700-a-9"
+        },
+        {
+          "id": 14,
+          "compareElement": "Chrome_test-button-12",
+          "elementStatus": "SAME",
+          "resultPicture": {},
+          "score": {},
+          "mainElement": "Chrome_1900x700-button-12"
+        }
+      ],
+      "environment": "Chrome_test"
+    }
+  ]
+}
