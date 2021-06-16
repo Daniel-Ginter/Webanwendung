@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import useFetch from "./useFetch";
+const WebsiteList = () => {
    const {
     error,
     isPending,
-    data: environments,
-  } = useFetch("http://localhost:3000/db.json");
+    data: dbs,
+  } = useFetch("http://localhost:3000/db");
 
   return (
     <div className=">WebsiteList">
@@ -14,4 +15,4 @@ import useFetch from "./useFetch";
   );
 };
 
-export default Home;
+export default WebsiteList;
