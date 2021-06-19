@@ -1,9 +1,9 @@
 import LoadEnvironment from './LoadEnvironment';
-import WebsiteList from './WebsiteList';
+import WebsiteList from './Website/WebsiteList';
 
 function App() {
   return (
-    <div className="App">
+    <div className="body">
       <h1>Compare Result</h1>
       <div className="content">
         <WebsiteList/>

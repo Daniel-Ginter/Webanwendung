@@ -9,11 +9,10 @@ const LoadEnvironment = () => {
   } = useFetch("http://localhost:3000/sites/ls5vs013.cs.tu-dortmund.de/home/Chrome_test2-db.json");
 
   return (
-    <div className="home">
+    <div className="LoadEnv">
       {error && <div>{error}</div>}
       {isPending && <div>Loading...</div>}
-      {environments && <h2>{environments.environment}</h2>}
-      {environments && <ElementList elements={environments.list} />}
+      {environments && <ElementList elements={environments.list} domain={environments.domain} environment={environments.environment} mainEnvironment={environments.mainEnvironment}/>}
     </div>
   );
 };

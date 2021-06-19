@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import useFetch from "./useFetch";
+import useFetch from "../useFetch";
 const WebsiteList = () => {
    const {
     error,
@@ -11,6 +11,7 @@ const WebsiteList = () => {
     <div className=">WebsiteList">
       {error && <div>{error}</div>}
       {isPending && <div>Loading...</div>}
+      {dbs && dbs.map((db) =>{ return<div>{db}</div> })}
     </div>
   );
 };
