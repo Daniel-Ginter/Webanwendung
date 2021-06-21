@@ -22,6 +22,9 @@
 .blueHighlight{
   color: blue;
 }
+.environment{
+  background: #5d99e2;
+}
 .pictures{
   display: flex;
   flex-direction: column;

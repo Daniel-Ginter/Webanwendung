@@ -8,6 +8,7 @@ export const FullResultImageChanged = ({
   environment,
   mainEnvironment,
   domain,
+  shows,
 }) => {
   var linkPartComp = domain+"/"+environment+"/"
   var linkPartMain = domain+"/"+mainEnvironment+"/"
@@ -33,10 +34,29 @@ export const FullResultImageChanged = ({
 
   const [stateElement, setStateElement] = React.useState(1);
   const [stateFullPage, setStatePage] = React.useState(1);
+  const [show,sehtShow ]=React.useState(shows);
 
   return (
     <div className="pictures">
-        {(() => {
+      <h1>{show}</h1>
+      {show &&(() => {
+          switch (stateElement) {
+            case 1:
+              return (
+                <h5>Nachher</h5>
+              );
+              case 2:
+                return (
+                  <h5>Vergleich</h5>
+                );
+            default:
+              return (
+                <h5>Voher</h5>
+              );
+          }
+        })()}
+   
+        {show &&(() => {
           switch (stateElement) {
             case 1:
               return (
@@ -67,13 +87,13 @@ export const FullResultImageChanged = ({
               );
           }
         })()}
-        {(() => {
-          switch (stateFullPage) {
+        {show &&(() => {
+          switch (stateElement) {
             case 1:
               return (
                 <img
                   className="FullPageImage"
-                  onClick={() => setStatePage(2)}
+                  onClick={() => setStateElement(2)}
                   alt="CompFullPage.img"
                   src={pathCompFullPage}
                 />
@@ -82,7 +102,7 @@ export const FullResultImageChanged = ({
                 return (
                   <img
                   className="FullPageImage"
-                    onClick={() => setStatePage(3)}
+                    onClick={() => setStateElement(3)}
                     alt="ResultFullPage.img"
                     src={pathResultFullPage}
                   />
@@ -91,7 +111,7 @@ export const FullResultImageChanged = ({
               return (
                 <img
                 className="FullPageImage"
-                  onClick={() => setStatePage(1)}
+                  onClick={() => setStateElement(1)}
                   alt="MainFullPage.img"
                   src={pathMainFullPage}
                 />
