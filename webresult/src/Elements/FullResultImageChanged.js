@@ -39,24 +39,25 @@ export const FullResultImageChanged = ({
   return (
     <div className="pictures">
       <h1>{show}</h1>
-      {show &&(() => {
+      {(() => {
           switch (stateElement) {
             case 1:
               return (
-                <h5>Nachher</h5>
+                <h4>Nachher</h4>
               );
               case 2:
                 return (
-                  <h5>Vergleich</h5>
+                  <h4>Vergleich</h4>
                 );
             default:
               return (
-                <h5>Voher</h5>
+                <h4>Voher</h4>
               );
           }
         })()}
    
-        {show &&(() => {
+        {(() => {
+          <h2>Element:</h2>
           switch (stateElement) {
             case 1:
               return (
@@ -87,7 +88,8 @@ export const FullResultImageChanged = ({
               );
           }
         })()}
-        {show &&(() => {
+        {(() => {
+          <h2>FullPageResult:</h2>
           switch (stateElement) {
             case 1:
               return (

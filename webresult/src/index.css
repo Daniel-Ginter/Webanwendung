@@ -3,6 +3,9 @@
   margin: 5%;
   text-align: center;
 }
+.Test{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
 
 .FullPageImage{
   width: 1200px;
@@ -17,17 +20,49 @@
 .element-preview{
   width: 90%;
   margin: 5%;
-  background: #82868b;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .blueHighlight{
   color: blue;
 }
 .environment{
-  background: #5d99e2;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: green;
 }
 .pictures{
   display: flex;
   flex-direction: column;
   justify-content: center;
 
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: auto;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 105%;
+  white-space: pre-line;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  
+}
+
+.header:hover{
+  
 }

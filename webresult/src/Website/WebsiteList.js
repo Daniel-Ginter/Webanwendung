@@ -1,6 +1,26 @@
 import React,{ useEffect, useState } from "react";
 import useFetch from "../useFetch";
 import TestList from "./TestList";
+
+const Inner = ({element}) => {
+  const [show, setShow] = React.useState(false);
+
+  function handleClick() {
+    if (show) {
+      setShow(false);
+    } else {
+      setShow(true);
+    }
+  }
+
+  return (
+    <div className="Test">
+        <h1 onClick={handleClick}>Test: {element.name}</h1>
+           {show && <TestList steps={element.children} testName={element.name}></TestList>}
+   </div>
+  )
+}
+
 const WebsiteList = () => {
   const {
     error,
@@ -27,24 +47,13 @@ const WebsiteList = () => {
     console.log(result);
   }
 
-const [show, setShow] = React.useState(false);
-function handleClick() {
-  if (show) {
-    setShow(false);
-  } else {
-    setShow(true);
-  }
-}
   return (
     <div className=">WebsiteList">
       {error && <div>{error}</div>}
       {isPending && <div>Loading...</div>}
       {paths &&
         result.map((element) => (
-          <div>
-            <h1 onClick={handleClick}>Test: {element.name}</h1>
-            {show && <TestList steps={element.children} testName={element.name}></TestList>}
-          </div>
+          <Inner element={element}/>
         ))}
     </div>
   );
