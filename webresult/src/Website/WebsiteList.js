@@ -15,7 +15,7 @@ const Inner = ({element}) => {
 
   return (
     <div className="Test">
-        <h1 onClick={handleClick}>Test: {element.name}</h1>
+        <h2 onClick={handleClick}>Test: {element.name}</h2>
            {show && <TestList steps={element.children} testName={element.name}></TestList>}
    </div>
   )

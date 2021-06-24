@@ -1,5 +1,6 @@
 import DBList from "./DBList";
 import React from "react";
+
 const Inner = ({ element,testName }) => {
 
   const [show, setShow] = React.useState(false);
@@ -13,8 +14,8 @@ const Inner = ({ element,testName }) => {
   }
 
   return (
-    <div>
-      <h2 onClick={handleClick}>Step: {element.name}</h2>
+    <div className="Step">
+      <h2 className="hover" onClick={handleClick}>Step: {element.name}</h2>
       {show && (
         <DBList
           dbList={element.children}

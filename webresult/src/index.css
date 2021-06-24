@@ -2,38 +2,94 @@
   width: 90%;
   margin: 5%;
   text-align: center;
+  background-color: 	#adcfcf;
 }
 .Test{
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 25px;
+  width: 96%;
+  margin: 2%;
+  padding: 0% 0% 1% 0%;
+  box-shadow: #466f9e;
+  background-color: #78b6ae;
+}
+.Step{
+  border-radius: 25px;
+  width: 96%;
+  margin: 2%;
+  padding: 0% 0% 1% 0%;
+  box-shadow: #466f9e;
+  background-color: #b4e1e9;
+  
+}
+h1{
+  font-size:5vw;
+  color: #2c4664;
+  text-transform: capitalize;
 }
 
+h2{
+  font-size:3vw;
+  color: #2c4664;
+}
+h3{
+  font-size:2vw;
+  color: #2c4664;
+}
+
+.hover:hover {
+  color: rgb(229, 160, 160);
+}
+
+
 .FullPageImage{
-  width: 1200px;
-  height: 800px;
+  width: 90%;
+  height: 90%;
   align-self: center;
-  object-fit: contain;
+  object-fit: cover;
 }
 .ElementImage{
   align-self: center;
   object-fit: contain;
+  padding: 0% 0% 2% 0%;
 }
 .element-preview{
-  width: 90%;
-  margin: 5%;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 15px 50px;
+  width: 96%;
+  margin: 2%;
+  padding: 0% 0% 1% 0%;
+  box-shadow:10px 10px #466f9e;
+  background-color: #6aa7d8;
+}
+
+.element-preview-closed{
+  border-radius: 15px 50px;
+  width: 96%;
+  margin: 2%;
+  box-shadow:10px 10px #466f9e;
+  background-color: #6aa7d8;
 }
 .blueHighlight{
-  color: blue;
+  color: 		#3a725c;
+}
+.blueHighlight:hover{
+  color: rgb(180, 129, 129);
 }
 .environment{
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  background-color: green;
+  border-radius: 25px;
+  width: 96%;
+  margin: 2%;
+  padding: 0% 0% 1% 0%;
+  box-shadow: #466f9e;
+  background-color: 	#97cfe2;
 }
 .pictures{
-  display: flex;
+  width: 90%;
+  margin: 5%;
+  padding: 0% 0% 5% 0%;
+  border-radius: 25px;
   flex-direction: column;
   justify-content: center;
-
+  background-color: 	#6b9bcc;
 }
 .tooltip {
   position: relative;
@@ -44,19 +100,29 @@
 .tooltip .tooltiptext {
   visibility: hidden;
   width: auto;
-  background-color: black;
-  color: #fff;
+  background-color: #466f9e;
+  color: 	 rgb(229, 160, 160);
+  font-size: 1vw;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
-  
-  /* Position the tooltip */
   position: absolute;
   z-index: 1;
-  top: -5px;
-  right: 105%;
-  white-space: pre-line;
+  bottom: 60%;
+  left: 50%;
+  margin-left: -100px;
 }
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -20px;
+  border-width: 20px;
+  border-style: solid;
+  border-color: #466f9e transparent transparent transparent;
+}
+
 
 .tooltip:hover .tooltiptext {
   visibility: visible;

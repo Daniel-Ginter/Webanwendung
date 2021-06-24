@@ -4,7 +4,7 @@ console.log(score);
   for (var i in score) {
     console.log("Key is "+i+". Value is "+score[i])
     return <div>
-        <p>{i} : {score[i]} </p>
+        <h3>{i} : {score[i]}</h3>
     </div>;
   }
 

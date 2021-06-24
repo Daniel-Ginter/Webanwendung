@@ -15,12 +15,12 @@ const Inner = ({ element, environment, domain, mainEnvironment }) => {
   }
 
   return (
-    <div className="element-preview" key={element.id}>
+    <div  key={element.id}>
       {(() => {
         switch (shows) {
           case true:
             return (
-              <div>
+              <div className="element-preview">
                 <h3 onClick={handleClicks}>
                   Element{" "}
                   <span className="blueHighlight tooltip">
@@ -69,7 +69,7 @@ const Inner = ({ element, environment, domain, mainEnvironment }) => {
                               domain={domain}
                               show={shows}
                             ></FullResultImageChanged>
-                            <h4>Scores</h4>
+                            <h3 >Scores</h3>
                             <Score scores={element.score}></Score>
                           </div>
                         );
@@ -82,7 +82,7 @@ const Inner = ({ element, environment, domain, mainEnvironment }) => {
             );
           case false:
             return (
-              <div>
+              <div className="element-preview-closed">
                 <h3 onClick={handleClicks}>
                   Element{" "}
                   <span className="blueHighlight tooltip">
@@ -93,7 +93,6 @@ const Inner = ({ element, environment, domain, mainEnvironment }) => {
                       {"\n"}
                       {"\n"}
                       {"\n"}
-                      hi
                     </p>
                   </span>{" "}
                   is {element.elementStatus}{" "}

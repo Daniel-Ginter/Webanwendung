@@ -43,21 +43,20 @@ export const FullResultImageChanged = ({
           switch (stateElement) {
             case 1:
               return (
-                <h4>Nachher</h4>
+                <h3>Nachher</h3>
               );
               case 2:
                 return (
-                  <h4>Vergleich</h4>
+                  <h3>Vergleich</h3>
                 );
             default:
               return (
-                <h4>Voher</h4>
+                <h3>Voher</h3>
               );
           }
         })()}
    
         {(() => {
-          <h2>Element:</h2>
           switch (stateElement) {
             case 1:
               return (
