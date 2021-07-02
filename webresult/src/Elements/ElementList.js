@@ -3,7 +3,7 @@ import FullResultImageChanged from "./FullResultImageChanged";
 import FullResultImageDelete from "./FullResultImageDelete";
 import FullResultImageNew from "./FullResultImageNew";
 import Score from "./Score";
-const Inner = ({ element, environment, domain, mainEnvironment }) => {
+const Inner = ({ element, environment, domain, mainEnvironment,testName,testStep }) => {
   const [shows, setShows] = React.useState(false);
 
   function handleClicks() {
@@ -21,7 +21,7 @@ const Inner = ({ element, environment, domain, mainEnvironment }) => {
           case true:
             return (
               <div className="element-preview">
-                <h3 onClick={handleClicks}>
+                <h3 className="hover" onClick={handleClicks}>
                   Element{" "}
                   <span className="blueHighlight tooltip">
                     {element.compareElement}
@@ -31,10 +31,9 @@ const Inner = ({ element, environment, domain, mainEnvironment }) => {
                       {"\n"}
                       {"\n"}
                       {"\n"}
-                      hi
                     </p>
                   </span>{" "}
-                  is {element.elementStatus}{" "}
+                  ist {element.elementStatus}{" "}
                 </h3>
                 <div>
                   {(() => {
@@ -46,6 +45,8 @@ const Inner = ({ element, environment, domain, mainEnvironment }) => {
                             compareElement={element.compareElement}
                             resultPicturePath={element.resultPicture}
                             environment={environment}
+                            testName={testName}
+                            testStep={testStep}
                           ></FullResultImageNew>
                         );
                       case "DELETED":
@@ -54,7 +55,9 @@ const Inner = ({ element, environment, domain, mainEnvironment }) => {
                             mainElement={element.mainElement}
                             compareElement={element.compareElement}
                             resultPicturePath={element.resultPicture}
-                            environment={environment}
+                            mainEnvironment={mainEnvironment}
+                            testName={testName}
+                            testStep={testStep}
                           ></FullResultImageDelete>
                         );
                       case "CHANGED":
@@ -68,6 +71,8 @@ const Inner = ({ element, environment, domain, mainEnvironment }) => {
                               mainEnvironment={mainEnvironment}
                               domain={domain}
                               show={shows}
+                              testName={testName}
+                              testStep={testStep}
                             ></FullResultImageChanged>
                             <h3 >Scores</h3>
                             <Score scores={element.score}></Score>
@@ -83,7 +88,7 @@ const Inner = ({ element, environment, domain, mainEnvironment }) => {
           case false:
             return (
               <div className="element-preview-closed">
-                <h3 onClick={handleClicks}>
+                <h3 className="hover"onClick={handleClicks}>
                   Element{" "}
                   <span className="blueHighlight tooltip">
                     {element.compareElement}
@@ -95,7 +100,7 @@ const Inner = ({ element, environment, domain, mainEnvironment }) => {
                       {"\n"}
                     </p>
                   </span>{" "}
-                  is {element.elementStatus}{" "}
+                  ist {element.elementStatus}{" "}
                 </h3>
               </div>
             );
@@ -104,7 +109,7 @@ const Inner = ({ element, environment, domain, mainEnvironment }) => {
     </div>
   );
 };
-const ElementList = ({ elements, environment, domain, mainEnvironment }) => {
+const ElementList = ({ elements, environment, domain, mainEnvironment,testName,testStep }) => {
   const [show, setShow] = React.useState(false);
   function handleClick() {
     if (show) {
@@ -115,13 +120,15 @@ const ElementList = ({ elements, environment, domain, mainEnvironment }) => {
   }
   return (
     <div className="environment">
-      <h2 onClick={handleClick}>{environment}</h2>
-      {elements.map((element) => (
+      <h2 className="hover" onClick={handleClick}>{environment}</h2>
+      {show&&elements.map((element) => (
         <Inner
           element={element}
           environment={environment}
           domain={domain}
           mainEnvironment={mainEnvironment}
+          testName={testName}
+          testStep={testStep}
         />
       ))}
     </div>

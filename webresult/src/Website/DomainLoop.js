@@ -1,3 +1,0 @@
-const DomainLoop = (String) =>{
-   
-}

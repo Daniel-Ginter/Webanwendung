@@ -5,13 +5,27 @@ export const FullResultImageDelete = ({
   compareElement,
   resultPicturePath,
   mainEnvironment,
+  testName,
+  testStep
 }) => {
-  const comp = mainElement;
-  const path = "http://localhost:3000/images/Chrome_test/" + comp + ".png";
-
+  var linkPart = testName + "/" + testStep + "/" + mainEnvironment + "/";
+  const pathMain =
+    "http://localhost:3000/images/" + linkPart + compareElement + ".png";
+  const pathMainFullPage =
+    "http://localhost:3000/images/" +
+    linkPart +
+    compareElement +
+    "-fullpage" +
+    ".png";
+    console.log("Deleted Link: {}",pathMain)
   return (
-    <div>
-      <img alt="" src={path} />
+    <div className="pictures">
+      <img className="ElementImage" alt="CompElement.img" src={pathMain} />
+      <img
+        className="FullPageImage"
+        alt="CompFullPage.img"
+        src={pathMainFullPage}
+      />
     </div>
   );
 };

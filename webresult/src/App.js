@@ -5,7 +5,6 @@ function App() {
   return (
     <div className="body">
       <h1>Vergleichsergebnis Anzeige</h1>
-      <p>HIHI</p>
       <div className="content">
         <WebsiteList/>
       </div>

@@ -1,4 +1,4 @@
-import React,{ useEffect, useState } from "react";
+import React from "react";
 import useFetch from "../useFetch";
 import TestList from "./TestList";
 
@@ -15,7 +15,7 @@ const Inner = ({element}) => {
 
   return (
     <div className="Test">
-        <h2 onClick={handleClick}>Test: {element.name}</h2>
+        <h2 className="hover" onClick={handleClick}>Test: {element.name}</h2>
            {show && <TestList steps={element.children} testName={element.name}></TestList>}
    </div>
   )
@@ -35,9 +35,6 @@ const WebsiteList = () => {
       shortPath.split("/").reduce((r, name, i, a) => {
         if (!r[name]) {
           r[name] = { result: [] };
-          if(a==3){
-            r.result.push({ name, children: r[name].result,path: shortPath });
-          }
           r.result.push({ name, children: r[name].result });
         }
 

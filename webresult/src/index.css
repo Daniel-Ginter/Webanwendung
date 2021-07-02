@@ -1,6 +1,9 @@
+.root{
+  margin-top: 0;
+}
 .body{
-  width: 90%;
-  margin: 5%;
+  width: 100%;
+  padding: 0% 0% 1% 0%;
   text-align: center;
   background-color: 	#adcfcf;
 }
@@ -45,9 +48,11 @@ h3{
   width: 90%;
   height: 90%;
   align-self: center;
-  object-fit: cover;
+  object-fit: contain;
 }
 .ElementImage{
+  width: 20%;
+  height: 20%;
   align-self: center;
   object-fit: contain;
   padding: 0% 0% 2% 0%;
@@ -90,6 +95,7 @@ h3{
   flex-direction: column;
   justify-content: center;
   background-color: 	#6b9bcc;
+  object-fit: contain;
 }
 .tooltip {
   position: relative;
