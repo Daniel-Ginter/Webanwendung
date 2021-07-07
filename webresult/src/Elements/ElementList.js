@@ -2,6 +2,7 @@ import React from "react";
 import FullResultImageChanged from "./FullResultImageChanged";
 import FullResultImageDelete from "./FullResultImageDelete";
 import FullResultImageNew from "./FullResultImageNew";
+import { FullResultImageSame } from "./FullResultImageSame";
 import Score from "./Score";
 const Inner = ({ element, environment, domain, mainEnvironment,testName,testStep }) => {
   const [shows, setShows] = React.useState(false);
@@ -78,8 +79,35 @@ const Inner = ({ element, environment, domain, mainEnvironment,testName,testStep
                             <Score scores={element.score}></Score>
                           </div>
                         );
+                        case "MAYBE":
+                          return (
+                          <div>
+                          <FullResultImageChanged
+                            mainElement={element.mainElement}
+                            compareElement={element.compareElement}
+                            resultPicture={element.resultPicture}
+                            environment={environment}
+                            mainEnvironment={mainEnvironment}
+                            domain={domain}
+                            show={shows}
+                            testName={testName}
+                            testStep={testStep}
+                          ></FullResultImageChanged>
+                          <h3 >Scores</h3>
+                          <Score scores={element.score}></Score>
+                        </div>
+                      );
                       default:
-                        return "Same";
+                        return (
+                          <FullResultImageSame
+                            mainElement={element.mainElement}
+                            compareElement={element.compareElement}
+                            resultPicturePath={element.resultPicture}
+                            environment={environment}
+                            testName={testName}
+                            testStep={testStep}
+                          ></FullResultImageSame>
+                        );
                     }
                   })()}
                 </div>
