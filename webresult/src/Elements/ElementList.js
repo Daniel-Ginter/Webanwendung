@@ -4,7 +4,14 @@ import FullResultImageDelete from "./FullResultImageDelete";
 import FullResultImageNew from "./FullResultImageNew";
 import { FullResultImageSame } from "./FullResultImageSame";
 import Score from "./Score";
-const Inner = ({ element, environment, domain, mainEnvironment,testName,testStep }) => {
+const Inner = ({
+  element,
+  environment,
+  domain,
+  mainEnvironment,
+  testName,
+  testStep,
+}) => {
   const [shows, setShows] = React.useState(false);
 
   function handleClicks() {
@@ -16,7 +23,7 @@ const Inner = ({ element, environment, domain, mainEnvironment,testName,testStep
   }
 
   return (
-    <div  key={element.id}>
+    <div key={element.id}>
       {(() => {
         switch (shows) {
           case true:
@@ -75,30 +82,37 @@ const Inner = ({ element, environment, domain, mainEnvironment,testName,testStep
                               testName={testName}
                               testStep={testStep}
                             ></FullResultImageChanged>
-                            <h3 >Scores</h3>
-                            <Score scores={element.score}></Score>
+                            <h3>Scores</h3>
+                            <Score
+                              scores={element.score}
+                              scorePriority={element.scorePriority}
+                            ></Score>
                           </div>
                         );
-                        case "MAYBE":
-                          return (
+                      case "MAYBE":
+                        return (
                           <div>
-                          <FullResultImageChanged
-                            mainElement={element.mainElement}
-                            compareElement={element.compareElement}
-                            resultPicture={element.resultPicture}
-                            environment={environment}
-                            mainEnvironment={mainEnvironment}
-                            domain={domain}
-                            show={shows}
-                            testName={testName}
-                            testStep={testStep}
-                          ></FullResultImageChanged>
-                          <h3 >Scores</h3>
-                          <Score scores={element.score}></Score>
-                        </div>
-                      );
+                            <FullResultImageChanged
+                              mainElement={element.mainElement}
+                              compareElement={element.compareElement}
+                              resultPicture={element.resultPicture}
+                              environment={environment}
+                              mainEnvironment={mainEnvironment}
+                              domain={domain}
+                              show={shows}
+                              testName={testName}
+                              testStep={testStep}
+                            ></FullResultImageChanged>
+                            <h3>Scores</h3>
+                            <Score
+                              scores={element.score}
+                              scorePriority={element.scorePriority}
+                            ></Score>
+                          </div>
+                        );
                       default:
                         return (
+                          <div>
                           <FullResultImageSame
                             mainElement={element.mainElement}
                             compareElement={element.compareElement}
@@ -107,6 +121,12 @@ const Inner = ({ element, environment, domain, mainEnvironment,testName,testStep
                             testName={testName}
                             testStep={testStep}
                           ></FullResultImageSame>
+                            <h3>Scores</h3>
+                            <Score
+                              scores={element.score}
+                              scorePriority={element.scorePriority}
+                            ></Score>
+                          </div>
                         );
                     }
                   })()}
@@ -116,7 +136,7 @@ const Inner = ({ element, environment, domain, mainEnvironment,testName,testStep
           case false:
             return (
               <div className="element-preview-closed">
-                <h3 className="hover"onClick={handleClicks}>
+                <h3 className="hover" onClick={handleClicks}>
                   Element{" "}
                   <span className="blueHighlight tooltip">
                     {element.compareElement}
@@ -137,7 +157,14 @@ const Inner = ({ element, environment, domain, mainEnvironment,testName,testStep
     </div>
   );
 };
-const ElementList = ({ elements, environment, domain, mainEnvironment,testName,testStep }) => {
+const ElementList = ({
+  elements,
+  environment,
+  domain,
+  mainEnvironment,
+  testName,
+  testStep,
+}) => {
   const [show, setShow] = React.useState(false);
   function handleClick() {
     if (show) {
@@ -148,17 +175,20 @@ const ElementList = ({ elements, environment, domain, mainEnvironment,testName,t
   }
   return (
     <div className="environment">
-      <h2 className="hover" onClick={handleClick}>{environment}</h2>
-      {show&&elements.map((element) => (
-        <Inner
-          element={element}
-          environment={environment}
-          domain={domain}
-          mainEnvironment={mainEnvironment}
-          testName={testName}
-          testStep={testStep}
-        />
-      ))}
+      <h2 className="hover" onClick={handleClick}>
+        {environment}
+      </h2>
+      {show &&
+        elements.map((element) => (
+          <Inner
+            element={element}
+            environment={environment}
+            domain={domain}
+            mainEnvironment={mainEnvironment}
+            testName={testName}
+            testStep={testStep}
+          />
+        ))}
     </div>
   );
 };
