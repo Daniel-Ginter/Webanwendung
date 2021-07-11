@@ -44,11 +44,11 @@ export const FullResultImageChanged = ({
       {(() => {
         switch (stateElement) {
           case 1:
-            return <h3>Nachher</h3>;
+            return <h3>Before changes</h3>;
           case 2:
-            return <h3>Vergleich</h3>;
+            return <h3>Comparison</h3>;
           default:
-            return <h3>Voher</h3>;
+            return <h3>After changes</h3>;
         }
       })()}
 

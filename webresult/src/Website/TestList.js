@@ -31,7 +31,7 @@ const Inner = ({ element,testName }) => {
 const TestList = ({ steps, testName }) => {
 
   console.log(steps);
-  console.log("teestName " + testName);
+  console.log("testName " + testName);
 
   return (
     <div>

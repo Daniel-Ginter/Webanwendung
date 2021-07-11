@@ -30,18 +30,18 @@ const Inner = ({
             return (
               <div className="element-preview">
                 <h3 className="hover" onClick={handleClicks}>
-                  Element{" "}
+                  Element:{" "}
                   <span className="blueHighlight tooltip">
                     {element.compareElement}
                     <p className="tooltiptext">
-                      Hauptelement: {element.mainElement} {"\n"}
-                      Vergleichselement: {element.compareElement} {"\n"}
-                      Selector: {element.selector}{"\n"}
+                      Mainelement: {element.mainElement} {"\n"}
+                      Compareelement: {element.compareElement} {"\n"}
+                      Selector: {element.selector} {"\n"}
                       {"\n"}
                       {"\n"}
                     </p>
                   </span>{" "}
-                  ist {element.elementStatus}{" "}
+                  is {element.elementStatus}{" "}
                 </h3>
                 <div>
                   {(() => {
@@ -137,18 +137,18 @@ const Inner = ({
             return (
               <div className="element-preview-closed">
                 <h3 className="hover" onClick={handleClicks}>
-                  Element{" "}
+                  Element:{" "}
                   <span className="blueHighlight tooltip">
                     {element.compareElement}
                     <p className="tooltiptext">
-                      Hauptelement: {element.mainElement} {"\n"}
-                      Vergleichselement: {element.compareElement} {"\n"}
-                      {"\n"}
+                      Mainelement: {element.mainElement} {"\n"}
+                      Compareelement: {element.compareElement} {"\n"}
+                      Selector: {element.selector} {"\n"}
                       {"\n"}
                       {"\n"}
                     </p>
                   </span>{" "}
-                  ist {element.elementStatus}{" "}
+                  is {element.elementStatus}{" "}
                 </h3>
               </div>
             );
@@ -176,7 +176,7 @@ const ElementList = ({
   return (
     <div className="environment">
       <h2 className="hover" onClick={handleClick}>
-        {environment}
+        Environment: {environment}
       </h2>
       {show &&
         elements.map((element) => (
