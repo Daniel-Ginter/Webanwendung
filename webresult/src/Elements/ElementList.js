@@ -36,7 +36,7 @@ const Inner = ({
                     <p className="tooltiptext">
                       Hauptelement: {element.mainElement} {"\n"}
                       Vergleichselement: {element.compareElement} {"\n"}
-                      {"\n"}
+                      Selector: {element.selector}{"\n"}
                       {"\n"}
                       {"\n"}
                     </p>

@@ -1,12 +1,24 @@
+
+  const runCallback = (cb) => {
+    return cb();
+  };
+
 const Score = ({scores,scorePriority}) => {
 console.log(scores);
 console.log(scorePriority);
-  for (var i in scores) {
-    console.log("Key is "+i+". Value is "+scores[i])
-    return <div>
-        <h3>{i} : {scores[i]}</h3>
-    </div>;
-  }
+return (
+  <div>
+    {runCallback(() => {
+        const row = [];
+        for (var i in scores) {
+          console.log(i +" hat Score " +scores[i])
+          row.push(<p key={i}>{i} hat <span className="blueHighlight tooltip">Score<p className="tooltiptext">Elementstatus ist {scorePriority[i]}</p></span> {scores[i]}</p>);
+        }
+        return row;
+      })}
+  </div>
+);
+
 
 };
 
