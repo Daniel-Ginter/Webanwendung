@@ -35,12 +35,28 @@ export const FullResultImageChanged = ({
     "http://localhost:3000/images/" + linkPartResult + "-fullpage" + ".png";
 
   const [stateElement, setStateElement] = React.useState(1);
+  const increaseStateHandler = () => {
+    if(stateElement >=3 ){
+      setStateElement(1);
+    }
+    else{
+      setStateElement(stateElement +1);
+    }
+  }
+  const decreaseStateHandler = () => {
+    if(stateElement ==1 ){
+      setStateElement(3);
+    }
+    else{
+      setStateElement(stateElement - 1);
+    }
+  }
 
-  const [show, sehtShow] = React.useState(shows);
+
 
   return (
     <div className="pictures">
-      <h1>{show}</h1>
+
       {(() => {
         switch (stateElement) {
           case 1:
@@ -51,7 +67,10 @@ export const FullResultImageChanged = ({
             return <h3>After changes</h3>;
         }
       })()}
-
+       <button onClick={() => decreaseStateHandler()}>Previous</button>
+      <button onClick={() => increaseStateHandler()}>Next</button>
+     
+      <p>Click on the images to sroll through the results</p>
       {(() => {
         switch (stateElement) {
           case 1:

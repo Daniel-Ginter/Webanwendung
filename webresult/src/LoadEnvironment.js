@@ -14,7 +14,7 @@ const LoadEnvironment = ({dbFile}) => {
       {error && <div>{error}</div>}
       {isPending && <div>Loading...</div>}
       {environments && <ElementList elements={environments.list} domain={environments.domain} environment={environments.environment} mainEnvironment={environments.mainEnvironment}
-      testStep={environments.testStep} testName={environments.testName}/>}
+      testStep={environments.testStep} testName={environments.testName} date={environments.date}/>}
     </div>
   );
 };

@@ -4,9 +4,10 @@ export const FullResultImageNew = ({
   mainElement,
   compareElement,
   mainEnvironment,
-  testName,
-  testStep,
   environment,
+  testName,
+  selector,
+  testStep,
 }) => {
   var linkPart = testName + "/" + testStep + "/" + environment + "/";
   const pathMain =
@@ -19,6 +20,15 @@ export const FullResultImageNew = ({
     ".png";
   return (
     <div className="pictures">
+      <h3>After changes</h3>
+      <p>
+        No Element with the same{" "}
+        <span className="blueHighlight tooltip">
+          Selector
+          <p className="tooltiptext">{selector}</p>
+        </span>{" "}
+        has been found in Environment: {mainEnvironment}
+      </p>
       <img className="ElementImage" alt="CompElement.img" src={pathMain} />
       <img
         className="FullPageImage"

@@ -111,12 +111,13 @@ h3{
   font-size: 1vw;
   text-align: center;
   border-radius: 6px;
-  padding: 5px 0;
+  padding: 0px 0;
   position: absolute;
   z-index: 1;
   bottom: 60%;
   left: 50%;
   margin-left: -100px;
+  white-space: pre-wrap;
 }
 .tooltip .tooltiptext::after {
   content: "";

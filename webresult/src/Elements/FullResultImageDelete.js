@@ -5,8 +5,10 @@ export const FullResultImageDelete = ({
   compareElement,
   resultPicturePath,
   mainEnvironment,
+  environment,
   testName,
-  testStep
+  selector,
+  testStep,
 }) => {
   var linkPart = testName + "/" + testStep + "/" + mainEnvironment + "/";
   const pathMain =
@@ -17,9 +19,18 @@ export const FullResultImageDelete = ({
     compareElement +
     "-fullpage" +
     ".png";
-    console.log("Deleted Link: {}",pathMain)
+  console.log("Deleted Link: {}", pathMain);
   return (
     <div className="pictures">
+      <h3>Before changes</h3>
+      <p>
+        No Element with the same{" "}
+        <span className="blueHighlight tooltip">
+          Selector
+          <p className="tooltiptext">{selector}</p>
+        </span>{" "}
+        has been found in Environment: {environment}
+      </p>
       <img className="ElementImage" alt="CompElement.img" src={pathMain} />
       <img
         className="FullPageImage"

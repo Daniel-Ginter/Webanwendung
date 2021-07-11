@@ -11,6 +11,7 @@ const Inner = ({
   mainEnvironment,
   testName,
   testStep,
+  date,
 }) => {
   const [shows, setShows] = React.useState(false);
 
@@ -34,11 +35,9 @@ const Inner = ({
                   <span className="blueHighlight tooltip">
                     {element.compareElement}
                     <p className="tooltiptext">
-                      Mainelement: {element.mainElement} {"\n"}
-                      Compareelement: {element.compareElement} {"\n"}
-                      Selector: {element.selector} {"\n"}
-                      {"\n"}
-                      {"\n"}
+                      <p>Mainelement: {"\n"} {element.mainElement}</p>
+                      <p>Compareelement: {"\n"} {element.compareElement} </p>
+                      <p>Selector: {"\n"} {element.selector}</p>
                     </p>
                   </span>{" "}
                   is {element.elementStatus}{" "}
@@ -53,7 +52,9 @@ const Inner = ({
                             compareElement={element.compareElement}
                             resultPicturePath={element.resultPicture}
                             environment={environment}
+                            mainEnvironment={mainEnvironment}
                             testName={testName}
+                            selector={element.selector}
                             testStep={testStep}
                           ></FullResultImageNew>
                         );
@@ -64,7 +65,9 @@ const Inner = ({
                             compareElement={element.compareElement}
                             resultPicturePath={element.resultPicture}
                             mainEnvironment={mainEnvironment}
+                            environment={environment}
                             testName={testName}
+                            selector={element.selector}
                             testStep={testStep}
                           ></FullResultImageDelete>
                         );
@@ -113,14 +116,14 @@ const Inner = ({
                       default:
                         return (
                           <div>
-                          <FullResultImageSame
-                            mainElement={element.mainElement}
-                            compareElement={element.compareElement}
-                            resultPicturePath={element.resultPicture}
-                            environment={environment}
-                            testName={testName}
-                            testStep={testStep}
-                          ></FullResultImageSame>
+                            <FullResultImageSame
+                              mainElement={element.mainElement}
+                              compareElement={element.compareElement}
+                              resultPicturePath={element.resultPicture}
+                              environment={environment}
+                              testName={testName}
+                              testStep={testStep}
+                            ></FullResultImageSame>
                             <h3>Scores</h3>
                             <Score
                               scores={element.score}
@@ -141,11 +144,9 @@ const Inner = ({
                   <span className="blueHighlight tooltip">
                     {element.compareElement}
                     <p className="tooltiptext">
-                      Mainelement: {element.mainElement} {"\n"}
-                      Compareelement: {element.compareElement} {"\n"}
-                      Selector: {element.selector} {"\n"}
-                      {"\n"}
-                      {"\n"}
+                      <p>Mainelement: {"\n"} {element.mainElement}</p>
+                      <p>Compareelement: {"\n"} {element.compareElement} </p>
+                      <p>Selector: {"\n"} {element.selector}</p>
                     </p>
                   </span>{" "}
                   is {element.elementStatus}{" "}
@@ -164,6 +165,7 @@ const ElementList = ({
   mainEnvironment,
   testName,
   testStep,
+  date
 }) => {
   const [show, setShow] = React.useState(false);
   function handleClick() {
@@ -176,7 +178,15 @@ const ElementList = ({
   return (
     <div className="environment">
       <h2 className="hover" onClick={handleClick}>
-        Environment: {environment}
+        Environment:{" "}
+        <span className="blueHighlight tooltip">
+          {environment}{" "}
+          <p className="tooltiptext">
+          <p> Mainenvironment: {"\n"} {mainEnvironment} </p>
+          <p>  Compareenvironment: {"\n"} {environment}</p>
+          <p> Date: {"\n"} {date}</p>
+          </p>
+        </span>
       </h2>
       {show &&
         elements.map((element) => (
