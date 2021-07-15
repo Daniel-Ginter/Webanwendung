@@ -19,6 +19,7 @@ export const FullResultImageSame = ({
     ".png";
   return (
     <div className="pictures">
+      <p>No changes have been detected</p>
       <img className="ElementImage" alt="CompElement.img" src={pathMain} />
       <img
         className="FullPageImage"
