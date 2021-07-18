@@ -15,6 +15,7 @@ export const FullResultImageNew = ({
   const pathMainFullPage =
     "http://localhost:3000/images/" +
     linkPart +
+    "Result/"+
     compareElement +
     "-fullpage" +
     ".png";

@@ -11,11 +11,13 @@ export const FullResultImageDelete = ({
   testStep,
 }) => {
   var linkPart = testName + "/" + testStep + "/" + mainEnvironment + "/";
+  var linkPart2 = testName + "/" + testStep + "/" + environment + "/";
   const pathMain =
     "http://localhost:3000/images/" + linkPart + compareElement + ".png";
   const pathMainFullPage =
     "http://localhost:3000/images/" +
-    linkPart +
+    linkPart2 +
+    "Result/"+
     compareElement +
     "-fullpage" +
     ".png";
